@@ -139,7 +139,7 @@ exports.getInfo = (req, res) => {
         "apiName": "Web Service Engineering UTS API",
         "resource": "courses (Mata Kuliah)",
         "version": "1.0",
-        "author": "Nama Anda (NIM Anda)",
+        "author": "M.KASPUL ANWAR [230104040212]",
         "endpoints": [
             { method: "GET", path: "/api/courses", description: "Ambil semua courses" },
             { method: "GET", path: "/api/courses/:id", description: "Ambil course berdasarkan ID" },

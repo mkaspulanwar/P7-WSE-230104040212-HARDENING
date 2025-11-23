@@ -22,3 +22,5 @@
 ::1 - - [23/Nov/2025:02:02:39 +0000] "GET /api/courses/1 HTTP/1.1" 200 97 "-" "PostmanRuntime/7.50.0"
 ::1 - - [23/Nov/2025:02:04:23 +0000] "GET /api/courses/ HTTP/1.1" 500 67 "-" "PostmanRuntime/7.50.0"
 ::1 - - [23/Nov/2025:02:08:53 +0000] "GET /api/courses/ HTTP/1.1" 500 67 "-" "PostmanRuntime/7.50.0"
+::1 - - [23/Nov/2025:02:52:03 +0000] "GET /api/info/ HTTP/1.1" 200 601 "-" "PostmanRuntime/7.50.0"
+::1 - - [23/Nov/2025:02:53:08 +0000] "GET /api/info/ HTTP/1.1" 200 610 "-" "PostmanRuntime/7.50.0"
