@@ -1,5 +1,16 @@
 # RESTful API Hardening & Observability (Praktikum 7)
 
+<p align="center">
+  <img src="https://img.shields.io/badge/Resource-COURSES-F0C800?style=for-the-badge&logo=appveyor&logoColor=black" alt="Resource: Courses">
+  <img src="https://img.shields.io/badge/Node.js-18+-339933?style=for-the-badge&logo=node.js&logoColor=white" alt="Node.js 18+">
+  <img src="https://img.shields.io/badge/Framework-Express.js-000000?style=for-the-badge&logo=express&logoColor=white" alt="Express.js">
+  <img src="https://img.shields.io/badge/Tested%20With-Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white" alt="Tested With: Postman">
+  <img src="https://img.shields.io/badge/Security-Helmet%2BCORS%2BRateLimit-007bff?style=for-the-badge&logo=dependabot" alt="Security Features Implemented">
+  <img src="https://img.shields.io/badge/Logging-Morgan%20Active-00CED1?style=for-the-badge&logo=serverless" alt="Morgan Logging Active">
+  <img src="https://img.shields.io/badge/Error%20Handling-404%2F500%20Global-dc3545?style=for-the-badge&logo=sentry" alt="Global Error Handling Active">
+  <img src="https://img.shields.io/badge/Monitoring-Health%20Check%20%2F%20.env-FF5733?style=for-the-badge&logo=kubernetes" alt="Health Check / .env Configured">
+</p>
+
 ## Project Overview
 Proyek ini merupakan kelanjutan dari hasil UTS (Web Service Engineering) dengan penambahan fitur Keamanan (Hardening) dan Observabilitas (Observability) sesuai dengan Modul Praktikum 7. API ini dibangun menggunakan Node.js dan Express.js dengan resource utama `courses`.
 
