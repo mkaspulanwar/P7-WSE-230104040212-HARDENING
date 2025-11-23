@@ -152,7 +152,7 @@ API ini menerapkan CRUD lengkap dan semua *error handling* wajib (200, 201, 204,
 ---
 
 | ANY endpoint-tidak-dikenal 404 | ERROR internal-server-error 500 |
-| :---: | :---: | :---: |
+| :---: | :---: |
 | ![ANY endpoint-tidak-dikenal 404](evidence/8_Get_any_endpoint_404.png) | ![ERROR internal-server-error 500](evidence/9_ERROR_internal_server_500.png) |
 
 ---
