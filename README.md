@@ -1,8 +1,7 @@
-# UTS-WSE-230104040212
+# RESTful API Hardening & Observability (Praktikum 7)
 
-## Web Service Engineering - Ujian Tengah Semester Ganjil 2025
-
-Proyek ini adalah implementasi **RESTful API** berbasis **Node.js** dan **Express.js** untuk memenuhi tugas Ujian Tengah Semester Mata Kuliah Web Service Engineering. API ini diimplementasikan dengan operasi **CRUD (Create, Read, Update, Delete)** lengkap dan menerapkan **7 Prinsip RESTful API** secara eksplisit.
+## Project Overview
+Proyek ini merupakan kelanjutan dari hasil UTS (Web Service Engineering) dengan penambahan fitur Keamanan (Hardening) dan Observabilitas (Observability) sesuai dengan Modul Praktikum 7. API ini dibangun menggunakan Node.js dan Express.js dengan resource utama `courses`.
 
 ## Tim Developer
 
