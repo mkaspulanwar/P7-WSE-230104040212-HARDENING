@@ -133,15 +133,15 @@ API ini menerapkan CRUD lengkap dan semua *error handling* wajib (200, 201, 204,
 
 ---
 
-| POST /api/courses 201 | POST /api/courses 404 | PUT /api/courses/:id 200|
+| POST /api/courses 201 | POST /api/courses 400 | PUT /api/courses/:id 200|
 | :---: | :---: | :---: |
-| ![POST /api/courses 201](evidence/3_POST_api_course_201.png) | ![POST /api/courses 404](evidence/3_POST_api_course_validasi_400.png) | ![PUT /api/courses/:id 200](evidence/4_PUT_api_courses_id_200r.png) |
+| ![POST /api/courses 201](evidence/3_POST_api_course_201.png) | ![POST /api/courses 400](evidence/3_POST_api_course_validasi_400.png) | ![PUT /api/courses/:id 200](evidence/4_PUT_api_courses_id_200.png) |
 
 ---
 
-| POST /api/courses 201 | POST /api/courses 404 | GET Info |
+| PUT /api/courses/:id 400 | PUT /api/courses/:id 404 | DELETE /api/courses/:id 204 |
 | :---: | :---: | :---: |
-| ![GET By Id](bukti/GET%20By%20Id.png) | ![GET Health](bukti/GET%20Health.png) | ![GET Info](bukti/GET%20Info.png) |
+| ![PUT /api/courses/:id 400](evidence/4_PUT_api_courses_id_400.png) | ![PUT /api/courses/:id 404](evidence/4_PUT_api_courses_id_404.png) | ![DELETE /api/courses/:id 204](evidence/5_DELETE_api_courses_id_204.png) |
 
 ---
 
