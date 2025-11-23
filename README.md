@@ -125,7 +125,7 @@ API ini menerapkan CRUD lengkap dan semua *error handling* wajib (200, 201, 204,
 
 ---
 
-## 11. Screenshot Hasil Uji
+## Screenshot Hasil Uji
 
 | GET /api/courses 200 | GET /api/courses/:id 200 | GET /api/courses/:id 404 |
 | :---: | :---: | :---: |
@@ -145,18 +145,14 @@ API ini menerapkan CRUD lengkap dan semua *error handling* wajib (200, 201, 204,
 
 ---
 
-| GET Limiter | GET Metrics | POST Create Error |
+| DELETE /api/courses/:id 404 | GET /api/info 200 | GET /api/health 200 |
 | :---: | :---: | :---: |
-| ![GET Limiter](bukti/GET%20Limiter.png) | ![GET Metrics](bukti/GET%20Metrics.png) | ![POST Create Error](bukti/POST%20Create%20Error.png) |
+| ![DELETE /api/courses/:id 404](evidence/5_DELETE_api_courses_id_404.png) | ![GET /api/info 200](evidence/6_GET_api_info_200.png) | ![GET /api/health 200](evidence/7_GET_api_health_200.png) |
 
 ---
 
-| POST Create | PUT Edit Error 400 | PUT Edit Error 404 |
+| ANY endpoint-tidak-dikenal 404 | ERROR internal-server-error 500 |
 | :---: | :---: | :---: |
-| ![POST Create](bukti/POST%20Create.png) | ![PUT Edit Error 400](bukti/PUT%20Edit%20Error%20400.png) | ![PUT Edit Error 404](bukti/PUT%20Edit%20Error%20404.png) |
+| ![ANY endpoint-tidak-dikenal 404](evidence/8_Get_any_endpoint_404.png) | ![ERROR internal-server-error 500](evidence/9_ERROR_internal_server_500.png) |
 
 ---
-
-| PUT Edit |
-| :---: |
-| ![PUT Edit](bukti/PUT%20Edit.png) |
