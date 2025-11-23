@@ -12,15 +12,53 @@ Proyek ini merupakan kelanjutan dari hasil UTS (Web Service Engineering) dengan 
 
 ---
 
-## 🛠️ Persiapan dan Instalasi
+## ✨ Fitur Implementasi Praktikum 7
 
-### Prasyarat
-Pastikan Anda sudah menginstal:
-1.  **Node.js**
-2.  **npm** (Node Package Manager)
-3.  **Postman** (untuk pengujian API)
+API ini telah diperkuat dengan implementasi fitur berikut:
+
+1.  **Security Headers (Helmet):** Menggunakan `helmet` untuk menambahkan lapisan keamanan melalui HTTP headers.
+2.  **CORS:** Menggunakan `cors` untuk membatasi akses ke API hanya dari *origin* yang diizinkan.
+3.  **Rate Limiter:** Menggunakan `express-rate-limit` untuk membatasi *request* per periode waktu (mencegah DDoS sederhana).
+4.  **Morgan Logging:** Menggunakan `morgan` untuk logging request secara sistematis ke *file* **`logs/access.log`**.
+5.  **Global Error Handler (500):** Middleware terakhir yang memastikan semua *error* tak terduga menghasilkan **Status 500** dengan *response* JSON yang konsisten.
+6.  **Handler 404 Global:** Middleware yang menangani semua *endpoint* yang tidak terdefinisi dengan **Status 404** JSON.
+7.  **Monitoring Endpoint:** Menambahkan **`/api/health`** untuk pengecekan status *uptime* service.
 
 ---
+
+## ⚙️ Panduan Instalasi & Menjalankan Proyek
+
+### 1. Kloning Repositori & Instalasi Dependensi
+
+⚠️ **CATATAN PENTING (Node Modules):**
+Repository ini menggunakan `.gitignore` untuk mengabaikan folder **`node_modules`**. Anda harus menginstal semua dependensi yang diperlukan sendiri.
+
+```bash
+# Kloning repositori
+git clone <URL_REPO_ANDA>
+cd P7-WSE-230104040212-HARDENING
+
+# Instal semua dependensi (npm install)
+npm install
+```
+### 2. Konfigurasi Environment (.env)
+Buat file baru bernama .env di root folder proyek Anda dan sesuaikan konfigurasinya:
+
+```bash
+PORT=3000
+RATE_LIMIT_MAX=100
+RATE_LIMIT_WINDOW_MS=900000  # Waktu dalam milidetik (contoh: 15 menit)
+NODE_ENV=development
+```
+
+### 3. Menjalankan Server
+Jalankan server menggunakan script yang telah dikonfigurasi (asumsi menggunakan nodemon):
+
+```bash
+npm run dev
+
+# Server akan berjalan pada http://localhost:3000
+```
 
 ### Langkah-langkah Menjalankan Proyek
 
