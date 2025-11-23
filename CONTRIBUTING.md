@@ -1,51 +1,50 @@
-# Panduan Kontribusi
+# Panduan Kontribusi pada RESTful API Hardening (P7 WSE)
 
-Terima kasih atas minat Anda untuk berkontribusi pada proyek UTS Web Service Engineering ini. Proyek ini adalah implementasi RESTful API sederhana dengan Node.js dan Express.js.
+Terima kasih telah mempertimbangkan untuk berkontribusi pada proyek ini. API ini merupakan hasil pengembangan Web Service Engineering (WSE) yang fokus pada 7 Prinsip RESTful dan penguatan keamanan (Hardening & Observability).
 
-Meskipun tujuan utamanya adalah untuk memenuhi persyaratan ujian, kami menghargai setiap masukan, saran, atau perbaikan, terutama yang berkaitan dengan penerapan prinsip-prinsip RESTful API dan struktur kode.
+## Bagaimana Cara Berkontribusi?
 
-## Cara Berkontribusi
+Kontribusi dapat berupa:
+1.  **Pelaporan *Bug***: Jika menemukan *error* atau *bug* pada endpoint yang sudah ada.
+2.  **Peningkatan Fitur**: Menambahkan *middleware* keamanan/logging yang lebih lanjut (misalnya, Winston, JWT Auth).
+3.  **Perbaikan Dokumentasi**: Memperbaiki kesalahan ketik atau memperjelas bagian `README.md`.
 
-### 1. Laporkan Bug atau Saran
+## Lingkungan Pengembangan (Development Setup)
 
-Jika Anda menemukan *bug* (kesalahan) atau memiliki saran perbaikan, silakan:
+Untuk memulai kontribusi, pastikan Anda mengikuti langkah-langkah *setup* yang ada di `README.md`:
 
-1.  Buka tab **Issues** di repositori ini.
-2.  Gunakan template yang sesuai (Bug Report atau Feature Request).
-3.  Berikan deskripsi yang jelas dan, jika memungkinkan, langkah-langkah untuk mereproduksi masalah (untuk *bug*).
+1.  **Kloning Repositori**: `git clone <URL_REPO>`
+2.  **Instalasi Dependensi**: `npm install` (Termasuk `helmet`, `cors`, `morgan`, `dotenv`, dll.).
+3.  **Konfigurasi**: Buat file `.env` untuk mengatur `PORT`, `RATE_LIMIT_MAX`, dll.
 
-### 2. Mengusulkan Perubahan (Pull Request)
+## Standar Kode dan Kualitas
 
-Jika Anda ingin berkontribusi dalam bentuk kode, ikuti langkah-langkah berikut:
+Semua kontribusi **Wajib** mematuhi standar berikut:
+
+### 1. Struktur Modular
+
+* Semua logika bisnis harus berada di **`controllers/`**.
+* Definisi rute harus berada di **`routes/`**.
+* Semua *middleware* baru (seperti otorisasi atau *logging* tambahan) harus diletakkan di folder **`middlewares/`**. 
+
+### 2. Kepatuhan RESTful
+
+* Gunakan **HTTP Methods** yang tepat (GET, POST, PUT, DELETE).
+* Gunakan **Status Codes** yang Konsisten (200, 201, 204, 400, 404, 500).
+* Pastikan *response* selalu dalam format **JSON** yang rapi (`{ "status": "success", "data": ... }` atau `{ "status": "fail", "message": ... }`).
+
+### 3. Error Handling
+
+* **Validasi Input**: Setiap *controller* yang menerima `POST` atau `PUT` harus menerapkan validasi dan mengembalikan **Status 400 (Bad Request)** jika input tidak valid.
+* **Global Error**: Pastikan *error* tak terduga (misalnya ReferenceError) ditangkap oleh **`errorHandler.js`** dan dikembalikan sebagai **Status 500**.
+
+## Alur Kontribusi (Git Workflow)
 
 1.  **Fork** repositori ini ke akun GitHub Anda.
-2.  **Clone** repositori yang sudah Anda *fork* ke lokal Anda.
-    ```bash
-    git clone [https://github.com/YourUsername/UTS-WSE-NimAnda.git](https://github.com/YourUsername/UTS-WSE-NimAnda.git)
-    cd UTS-WSE-NimAnda
-    ```
-3.  Buat *branch* baru untuk perubahan Anda.
-    ```bash
-    git checkout -b fix/nama-fitur-atau-bug
-    ```
-4.  Lakukan perubahan kode Anda. Pastikan perubahan mengikuti standar *linting* (jika ada) dan mempertahankan struktur modular (**src/controllers**, **src/routes**, dll.).
-5.  Uji perubahan Anda di Postman untuk memastikan semua *endpoint* yang relevan (`GET`, `POST`, `PUT`, `DELETE`) dan *status codes* (200, 201, 204, 400, 404) tetap berfungsi dengan benar.
-6.  *Commit* perubahan Anda dengan pesan yang deskriptif.
-    ```bash
-    git commit -m "feat: Menambahkan validasi untuk field credits" 
-    # atau
-    git commit -m "fix: Memperbaiki status code 400 pada POST"
-    ```
-7.  *Push* *branch* ke *fork* Anda.
-    ```bash
-    git push origin fix/nama-fitur-atau-bug
-    ```
-8.  Buka **Pull Request (PR)** dari *branch* Anda ke *branch* utama (`main` atau `master`) repositori asli.
+2.  Buat *branch* baru dari `main` (misalnya `git checkout -b feature/nama-fitur-baru`).
+3.  Lakukan perubahan dan *commit* dengan pesan yang deskriptif.
+4.  Pastikan semua *endpoint* yang sudah ada (**CRUD, /api/health, /api/info**) masih berfungsi normal.
+5.  **Push** *branch* Anda.
+6.  Buka **Pull Request (PR)** ke *branch* `main` dari repositori asli.
 
-## ⚙️ Standar Kode
-
-* **Prinsip REST:** Semua perubahan harus konsisten dengan **7 Prinsip RESTful API** yang diterapkan dalam proyek ini.
-* **Struktur:** Pertahankan struktur folder standar: `src/app.js`, `src/routes/`, `src/controllers/`, `src/data/`.
-* **Response:** Semua *response* harus dalam format JSON dan menggunakan *status code* HTTP yang tepat (Prinsip 4 dan 5).
-
-Terima kasih atas waktu dan upaya Anda!
+Kami akan meninjau Pull Request Anda secepatnya. Terima kasih!
