@@ -127,19 +127,19 @@ API ini menerapkan CRUD lengkap dan semua *error handling* wajib (200, 201, 204,
 
 ## 11. Screenshot Hasil Uji
 
-| GET /api/courses 200 | CORS Error | Delete Error |
+| GET /api/courses 200 | GET /api/courses/:id 200 | GET /api/courses/:id 404 |
 | :---: | :---: | :---: |
-| ![500](src/1_GET_api_course_200.png) | ![CORS Error](bukti/CORS%20Error.png) | ![Delete Error](bukti/Delete%20Error.png) |
+| ![ GET /api/courses 200](evidence/1_GET_api_course_200.png) | ![GET /api/courses/:id 200](evidence/2_GET_api_course_id_200.png) | ![ GET /api/courses/:id 404](evidence/2_GET_api_course_id_404.png) |
 
 ---
 
-| Delete | GET All | GET By Id Error |
+| POST /api/courses 201 | POST /api/courses 404 | PUT /api/courses/:id 200|
 | :---: | :---: | :---: |
-| ![Delete](bukti/Delete.png) | ![GET All](bukti/GET%20All.png) | ![GET By Id Error](bukti/GET%20By%20Id%20Error.png) |
+| ![POST /api/courses 201](evidence/3_POST_api_course_201.png) | ![POST /api/courses 404](evidence/3_POST_api_course_validasi_400.png) | ![PUT /api/courses/:id 200](evidence/4_PUT_api_courses_id_200r.png) |
 
 ---
 
-| GET By Id | GET Health | GET Info |
+| POST /api/courses 201 | POST /api/courses 404 | GET Info |
 | :---: | :---: | :---: |
 | ![GET By Id](bukti/GET%20By%20Id.png) | ![GET Health](bukti/GET%20Health.png) | ![GET Info](bukti/GET%20Info.png) |
 
