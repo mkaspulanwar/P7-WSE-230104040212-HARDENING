@@ -12,7 +12,7 @@ Proyek ini merupakan kelanjutan dari hasil UTS (Web Service Engineering) dengan 
 
 ---
 
-## ✨ Fitur Implementasi Praktikum 7
+## Fitur Implementasi Praktikum 7
 
 API ini telah diperkuat dengan implementasi fitur berikut:
 
@@ -26,16 +26,28 @@ API ini telah diperkuat dengan implementasi fitur berikut:
 
 ---
 
-## ⚙️ Panduan Instalasi & Menjalankan Proyek
+## Panduan Instalasi & Menjalankan Proyek
+
+### 🛠️ Tools & Dependencies
+
+| Kategori      | Tools / Library                                      |
+|---------------|-------------------------------------------------------|
+| Runtime       | Node.js 18+                                           |
+| Framework     | Express.js                                            |
+| Keamanan      | helmet, cors, express-rate-limit                      |
+| Logging       | morgan (basic), winston (opsional advanced)           |
+| Env Config    | dotenv                                                |
+| Testing       | Postman / Thunder Client                              |
+| Dokumentasi   | Markdown (README.md) atau Swagger (opsional)          |
 
 ### 1. Kloning Repositori & Instalasi Dependensi
 
-⚠️ **CATATAN PENTING (Node Modules):**
+**CATATAN PENTING (Node Modules):**
 Repository ini menggunakan `.gitignore` untuk mengabaikan folder **`node_modules`**. Anda harus menginstal semua dependensi yang diperlukan sendiri.
 
 ```bash
 # Kloning repositori
-git clone <URL_REPO_ANDA>
+git clone https://github.com/mkaspulanwar/P7-WSE-230104040212-HARDENING.git
 cd P7-WSE-230104040212-HARDENING
 
 # Instal semua dependensi (npm install)
@@ -60,125 +72,91 @@ npm run dev
 # Server akan berjalan pada http://localhost:3000
 ```
 
-### Langkah-langkah Menjalankan Proyek
-
-1.  **Clone Repository:**
-    ```bash
-    git clone [LINK REPO GITHUB ANDA]
-    cd [NAMA FOLDER PROJECT ANDA]
-    ```
-
-2.  **Instal Dependensi:**
-    Instal Express.js dan Nodemon (untuk mode development).
-    ```bash
-    npm install
-    ```
-
-3.  **Jalankan Server:**
-    Server akan berjalan di **Port 3000**[cite: 55].
-
-    ```bash
-    npm run dev 
-    ```
-    *(Kode wajib dijalankan dengan perintah ini [cite: 57])*
-
 ---
 
-## 📚 Resource Utama: `courses`
+## Struktur Direktori Proyek
 
-Resource yang diimplementasikan didasarkan pada digit akhir NIM (230104040212), yaitu **`courses`** (Data Mata Kuliah).
+Struktur folder aplikasi Express API ini adalah sebagai berikut:
 
-| Digit Akhir NIM | Resource | Deskripsi | Field Utama (wajib ada) |
-| :---: | :--- | :--- | :--- |
-| 0 | books | Data buku | title, author, year |
-| 1 | articles | Data artikel | title, author, content |
-| 2 | courses | Data mata kuliah | code, title, credits |
-| 3 | students | Data mahasiswa | name, npm, major |
-| 4 | employees | Data pegawai | name, position, salary |
-| 5 | members | Data anggota organisasi | name, role, joinedAt |
-| 6 | events | Data kegiatan kampus | title, date, location |
-| 7 | movies | Data film | title, genre, year |
-| 8 | orders | Data pesanan | product, quantity, price |
-| 9 | tasks | Data tugas | title, deadline, status |
-
----
-
-### Field Utama (Wajib Ada)
-
-Setiap objek *course* memiliki *field* berikut:
-
-| Field | Tipe Data | Keterangan |
-| :--- | :--- | :--- |
-| `id` | Integer | ID unik (otomatis dibuat) |
-| `code` | String | Kode mata kuliah (Wajib) |
-| `title` | String | Nama mata kuliah (Wajib) |
-| `credits` | Integer | Jumlah SKS (Wajib) |
-
----
-
-### Contoh Format Data
-```json
-[
-  { "id": 1, "code": "TI001", "title": "Web Service Engineering", "credits": 3 },
-  { "id": 2, "code": "TI002", "title": "Sistem Basis Data", "credits": 4 }
-]
-```
-### Struktur Folder Proyek
-Struktur folder yang digunakan mengikuti template standar yang disyaratkan:
-```markdown
-src/
-├── app.js             # File utama Express.js
+```bash
+P7_230104040212_M. KASPUL ANWAR/
+├── evidence/
+├── logs/
+│   └── access.log
+├── node_modules/
+├── src/
+│   ├── controllers/
+│   │   └── courses.controller.js
+│   ├── data/
+│   │   └── courses.data.js
+│   ├── middlewares/
+│   │   └── errorHandler.js
+│   └── routes/
+│       └── courses.routes.js
 ├── routes/
-│   └── courses.routes.js # Routing untuk resource courses
-├── controllers/
-│   └── courses.controller.js # Logika CRUD dan Validasi
-└── data/
-    └── courses.data.js   # Data dummy (array courses)
-README.md
+│   └── courses.routes.js
+├── app.js
+├── .env
+├── .gitignore
+├── CONTRIBUTING.md
+├── LICENSE
+├── package-lock.json
+├── package.json
+└── README.md
 ```
 
 ---
 
-### Spesifikasi Endpoint RESTful
+## Spesifikasi Endpoint Lengkap
 
-Semua endpoint menggunakan prefix `/api`.
+API ini menerapkan CRUD lengkap dan semua *error handling* wajib (200, 201, 204, 400, 404, 500).
 
-| Method | Endpoint | Deskripsi | Status Code (Sukses/Gagal) |
-| :--- | :--- | :--- | :--- |
-| **GET** | `/api/courses` | Ambil semua data courses. | 200 |
-| **GET** | `/api/courses/:id` | Ambil data course berdasarkan id. | 200 / 404 |
-| **POST** | `/api/courses` | Tambah data course baru. | 201 / 400 |
-| **PUT** | `/api/courses/:id` | Update data course. | 200 / 400 / 404 |
-| **DELETE** | `/api/courses/:id` | Hapus data course. | 204 / 404 |
-| **GET** | `/api/info` | Informasi service (Discoverability). | 200 |
+| Method | Endpoint             | Deskripsi                                      | Status Code       |
+|--------|-----------------------|------------------------------------------------|--------------------|
+| GET    | `/api/courses`        | Ambil semua data mata kuliah                   | 200                |
+| GET    | `/api/courses/:id`    | Ambil data berdasarkan ID                      | 200 / 404          |
+| POST   | `/api/courses`        | Tambah data baru                               | 201 / 400          |
+| PUT    | `/api/courses/:id`    | Update data                                    | 200 / 400 / 404    |
+| DELETE | `/api/courses/:id`    | Hapus data                                     | 204 / 404          |
+| GET    | `/api/info`           | Metadata service (*Discoverability*)           | 200                |
+| GET    | `/api/health`         | Mengecek status service (*Monitoring*)         | 200                |
+| ANY    | `endpoint-tidak-dikenal` | Handler 404 Global                         | 404                |
+| ERROR  | `internal-server-error` | Global Error Handler                         | 500                |
+
+---
+
+## 11. Screenshot Hasil Uji
+
+| GET /api/courses 200 | CORS Error | Delete Error |
+| :---: | :---: | :---: |
+| ![500](src/1_GET_api_course_200.png) | ![CORS Error](bukti/CORS%20Error.png) | ![Delete Error](bukti/Delete%20Error.png) |
 
 ---
 
-### Contoh Validasi dan Error Handling (Status 400)
-
-Jika *field* wajib (**code**, **title**, atau **credits**) kosong saat mengirim data, API akan merespon dengan **Status Code 400 Bad Request** dan format *response* error sebagai berikut:
-
-```json
-{
-  "status": "fail",
-  "message": "Field 'title' wajib diisi"
-}
-```
----
-
-### Penerapan 7 Prinsip RESTful API
-
-Berikut adalah daftar 7 Prinsip RESTful yang diterapkan dalam proyek ini:
-
-| No | Prinsip | Implementasi |
-| :---: | :--- | :--- |
-| **1** | **Resource-Oriented URI** | Menggunakan kata benda jamak `/api/courses`. |
-| **2** | **Proper HTTP Methods** | Menggunakan GET, POST, PUT, DELETE sesuai fungsi CRUD. |
-| **3** | **Stateless Communication** | Tidak menyimpan *session* atau *state* klien di server. |
-| **4** | **Consistent Status Codes** | Menggunakan 200, 201, 204, 400, 404 tepat sesuai konteks. |
-| **5** | **JSON Representation** | Semua *response* dan *request body* menggunakan format JSON yang rapi dan seragam. |
-| **6** | **Validation & Error Handling** | Melakukan validasi *field* wajib dan mengirimkan *error* 400 Bad Request jika gagal. |
-| **7** | **Discoverability** | Menyediakan *endpoint* `/api/info` sebagai *metadata service*. |
-
+| Delete | GET All | GET By Id Error |
+| :---: | :---: | :---: |
+| ![Delete](bukti/Delete.png) | ![GET All](bukti/GET%20All.png) | ![GET By Id Error](bukti/GET%20By%20Id%20Error.png) |
 
 ---
+
+| GET By Id | GET Health | GET Info |
+| :---: | :---: | :---: |
+| ![GET By Id](bukti/GET%20By%20Id.png) | ![GET Health](bukti/GET%20Health.png) | ![GET Info](bukti/GET%20Info.png) |
+
+---
+
+| GET Limiter | GET Metrics | POST Create Error |
+| :---: | :---: | :---: |
+| ![GET Limiter](bukti/GET%20Limiter.png) | ![GET Metrics](bukti/GET%20Metrics.png) | ![POST Create Error](bukti/POST%20Create%20Error.png) |
+
+---
+
+| POST Create | PUT Edit Error 400 | PUT Edit Error 404 |
+| :---: | :---: | :---: |
+| ![POST Create](bukti/POST%20Create.png) | ![PUT Edit Error 400](bukti/PUT%20Edit%20Error%20400.png) | ![PUT Edit Error 404](bukti/PUT%20Edit%20Error%20404.png) |
+
+---
+
+| PUT Edit |
+| :---: |
+| ![PUT Edit](bukti/PUT%20Edit.png) |
