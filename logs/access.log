@@ -17,3 +17,8 @@
 ::1 - - [23/Nov/2025:01:01:39 +0000] "DELETE /api/courses/5 HTTP/1.1" 404 52 "-" "PostmanRuntime/7.50.0"
 ::1 - - [23/Nov/2025:01:03:14 +0000] "GET /api/health HTTP/1.1" 200 76 "-" "PostmanRuntime/7.50.0"
 ::1 - - [23/Nov/2025:01:05:55 +0000] "GET /api/unknown HTTP/1.1" 404 72 "-" "PostmanRuntime/7.50.0"
+::1 - - [23/Nov/2025:02:02:31 +0000] "GET /api/courses/1 HTTP/1.1" 200 97 "-" "PostmanRuntime/7.50.0"
+::1 - - [23/Nov/2025:02:02:37 +0000] "GET /api/courses/1 HTTP/1.1" 200 97 "-" "PostmanRuntime/7.50.0"
+::1 - - [23/Nov/2025:02:02:39 +0000] "GET /api/courses/1 HTTP/1.1" 200 97 "-" "PostmanRuntime/7.50.0"
+::1 - - [23/Nov/2025:02:04:23 +0000] "GET /api/courses/ HTTP/1.1" 500 67 "-" "PostmanRuntime/7.50.0"
+::1 - - [23/Nov/2025:02:08:53 +0000] "GET /api/courses/ HTTP/1.1" 500 67 "-" "PostmanRuntime/7.50.0"
