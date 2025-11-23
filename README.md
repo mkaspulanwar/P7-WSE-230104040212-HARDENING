@@ -1,4 +1,4 @@
-# RESTful API Hardening & Observability (Praktikum 7)
+# PRAKTIKUM #7 WSE RESTFUL API HARDENING & OBSERVABILITY
 
 <p align="center">
   <img src="https://img.shields.io/badge/Resource-COURSES-F0C800?style=for-the-badge&logo=appveyor&logoColor=black" alt="Resource: Courses">
